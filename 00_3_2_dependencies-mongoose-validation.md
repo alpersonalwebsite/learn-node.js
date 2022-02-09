@@ -132,3 +132,57 @@ Error: User validation failed: hobbies: User needs at least one hobby
 ## Async Custom Validators
 For when we are dealing with async operations, like fetching data from an API, reading from a DB or disk...
 
+```js
+const userSchema = new mongoose.Schema({
+  name: String,
+  age: Number,
+  hobbies: {
+    type: Array,
+    validate: {
+      validator: function(value) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve(value && value.length > 0);
+          }, 7000);
+        })
+      },
+      message: 'User needs at least one hobby'
+    }
+  }
+});
+```
+
+In this example, if we try to add a user without at least one hobby we will receive the following error:
+
+```
+Error: User validation failed: hobbies: User needs at least one hobby
+```
+
+## Validation Errors
+Errors returned after failed validation contain an errors object whose values are ValidatorError objects. Each ValidatorError has kind, path, value, and message properties. A ValidatorError also may have a reason property. If an error was thrown in the validator, this property will contain the error that was thrown.
+
+```js
+async function createUser() {
+  const user = new User({
+    age: 20
+  });
+
+  try {
+    const result = await user.save();
+    console.log(result);
+  } catch (err) {
+      for (let e in err.errors) {
+        console.log(err.errors[e].message)
+      }
+  }
+}
+
+createUser();
+```
+
+In this example we are looping through all the errors (like err.error.name) and accessing the message property.
+
+```
+Path `name` is required.
+User needs at least one hobby
+```
