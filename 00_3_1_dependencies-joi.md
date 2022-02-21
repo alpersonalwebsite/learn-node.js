@@ -1,5 +1,5 @@
 # Joi
-(for validation purposes)
+For validation purposes.
 
 Install Joi: `npm install joi`
 
