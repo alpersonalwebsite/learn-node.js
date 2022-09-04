@@ -105,6 +105,59 @@ const user = new User({
 });
 ```
 
+## Methods and Statics
+
+Each Schema can define instance and static methods for its model.
+
+Remember:
+- `static methods` are methods that exists on our Model (or class)
+- `instance methods` are methods that exists on the objects (instances) created by the Class
+
+### Instance method example
+
+Schema and model file
+```js
+const userSchema = new mongoose.Schema({
+  name: String
+});
+
+userSchema.methods.generateAuthToken = function() {
+  return jwt.sign({ _id: this.id, user: this.name, isAdmin: this.isAdmin }, config.get('jwt-private-key'));
+}
+
+const User = mongoose.model('User', userSchema);
+```
+
+File
+```js
+const user = new User({ name: 'Peter' });
+
+const token = user.generateAuthToken();
+```
+
+### Static method example
+
+Schema and model file
+```js
+const productSchema = new mongoose.Schema({
+  name: String,
+  price: Number,
+});
+
+productSchema.statics.delete = function(productId) {
+  return this.findByIdAndRemove({
+    _id: productId
+  });
+}
+
+const Product = mongoose.model('Product', productSchema);
+```
+
+File
+```js
+const product = await Product.delete(req.params.id);
+```
+
 ## CRUD operations
 
 ### Creating a document
