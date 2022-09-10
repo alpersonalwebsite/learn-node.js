@@ -284,13 +284,16 @@ const logger = createLogger({
 });
 ```
 
-So if we throw an error in Node:
+To produce the event we just need to reject a promise without catching the rejection.
 
 ```js
-const express = require('express');
-const app = express();
-
-throw new Error('Something went wrong!')
+Promise.reject(new Error('Failed'));
 ```
 
-Sample output in `exceptions.log`
+Sample output in `rejections.log`
+
+```log
+{"date":"Thu Feb 17 2022 15:36:24 GMT-0800 (Pacific Standard Time)","error":{},"exception":true,"level":"error","message":"unhandledRejection: Failed\nError: Failed\n    at Object.<anonymous> (/Users/your-username/project/index.js:38:16)\n    at Module._compile (node:internal/modules/cjs/loader:1101:14)\n    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)\n    at Module.load (node:internal/modules/cjs/loader:981:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)\n    at node:internal/main/run_main_module:17:47","os":{"loadavg":[6.71533203125,5.095703125,4.6455078125],"uptime":2363365},"process":{"argv":["/Users/aldiaz/.nvm/versions/node/v16.13.0/bin/node","/Users/your-username/project/index.js"],"cwd":"/Users/your-username/project","execPath":"/Users/aldiaz/.nvm/versions/node/v16.13.0/bin/node","gid":20,"memoryUsage":{"arrayBuffers":37530608,"external":43516261,"heapTotal":58281984,"heapUsed":38646720,"rss":80269312},"pid":79433,"uid":501,"version":"v16.13.0"},"stack":"Error: Failed\n    at Object.<anonymous> (/Users/your-username/project/index.js:38:16)\n    at Module._compile (node:internal/modules/cjs/loader:1101:14)\n    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)\n    at Module.load (node:internal/modules/cjs/loader:981:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)\n    at node:internal/main/run_main_module:17:47","trace":[{"column":16,"file":"/Users/your-username/project/index.js","function":null,"line":38,"method":null,"native":false},{"column":14,"file":"node:internal/modules/cjs/loader","function":"Module._compile","line":1101,"method":"_compile","native":false},{"column":10,"file":"node:internal/modules/cjs/loader","function":"Module._extensions..js","line":1153,"method":".js","native":false},{"column":32,"file":"node:internal/modules/cjs/loader","function":"Module.load","line":981,"method":"load","native":false},{"column":12,"file":"node:internal/modules/cjs/loader","function":"Module._load","line":822,"method":"_load","native":false},{"column":12,"file":"node:internal/modules/run_main","function":"Function.executeUserEntryPoint [as runMain]","line":81,"method":"executeUserEntryPoint [as runMain]","native":false},{"column":47,"file":"node:internal/main/run_main_module","function":null,"line":17,"method":null,"native":false}]}
+```
+
+We can also add `handleExceptions` and `handleRejections` to our transport.
