@@ -1,5 +1,20 @@
 # Node Module System
 
+---
+
+* [Creating a module](#creating-a-module)
+* [Node built-in modules](#node-built-in-modules)
+  + [Path module](#path-module)
+  + [OS module](#os-module)
+  + [File System module](#file-system-module)
+  + [Events module](#events-module)
+  + [HTTP module](#http-module)
+* [NPM](#npm)
+  + [SemVer (Semantic versioning)](#semver--semantic-versioning-)
+  + [Publishing a package in NPM Registry](#publishing-a-package-in-npm-registry)
+
+---
+
 Every file in a Node application is considered a module.
 The variables and functions defined in a file/module are scoped to that file/module. 
 If we want to use a variable or function outside a module we need to export it and make it public
