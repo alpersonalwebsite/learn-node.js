@@ -2,6 +2,23 @@
 
 Install Express: `npm install express`
 
+---
+
+* [Basic Express App](#basic-express-app)
+* [Accessing environment variable](#accessing-environment-variable)
+* [Using route parameters](#using-route-parameters)
+* [Using query string parameters](#using-query-string-parameters)
+* [CRUD operations](#crud-operations)
+  + [Create or post()](#create-or-post)
+  + [Read or .get()](#read-or-get)
+  + [Update or .put()](#update-or-put)
+  + [Delete or .delete()](#delete-or-delete)
+* [Middleware](#middleware)
+  + [Creating a middleware](#creating-a-middleware)
+* [Sample Express App Architecture](#sample-express-app-architecture)
+
+---
+
 ## Basic Express App
 
 ```js
@@ -89,7 +106,7 @@ If you go to http://localhost:9000/users?sort=desc&status=active
 * U > Update > Put
 * D > Delete > Delete
 
-### Create or post()
+### Create or post
 .post(/collection)
 
 This will add a new resource (user) to the collection (users) 
@@ -113,7 +130,7 @@ app.post('/users', function(req, res) {
 });
 ```
 
-### Read or .get() 
+### Read or .get
 .get(/collection) or .get(collection/resource)
 
 This will return an array of objects (or users)
@@ -137,7 +154,7 @@ app.get('/users/:id', function(req, res) {
 });
 ```
 
-### Update or .put()
+### Update or .put
 .put(/collection/resource)
 
 This will update the resource (user) of the collection (users).
@@ -157,7 +174,7 @@ app.put('/users/:id', function(req, res) {
 
 ```
 
-### Delete or .delete()
+### Delete or .delete
 .delete(/collection/resource)
 
 This will delete a resource from the collection.
