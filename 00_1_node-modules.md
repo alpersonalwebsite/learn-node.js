@@ -10,7 +10,7 @@
   + [Events module](#events-module)
   + [HTTP module](#http-module)
 * [NPM](#npm)
-  + [SemVer (Semantic versioning)](#semver--semantic-versioning-)
+  + [SemVer (Semantic versioning)](#semver)
   + [Publishing a package in NPM Registry](#publishing-a-package-in-npm-registry)
 
 ---
@@ -192,7 +192,8 @@ We have 2 types of dependencies:
 1. `dependencies` (our app dependencies)
 2. `devDependencies` (dependencies that we don't want in our production bundle)
 
-### SemVer (Semantic versioning)
+### SemVer 
+(Semantic versioning)
 
 **@Major.Minor.Patch**
 
