@@ -34,3 +34,5 @@
   * [Middlewares](00_2_0_express.md#middleware)
     + [Creating a middleware](00_2_0_express.md#creating-a-middleware)
   * [Sample Express App Architecture](00_2_0_express.md#sample-express-app-architecture)
+
+* [Template engines](./00_2_1_express-template-engines.md)
