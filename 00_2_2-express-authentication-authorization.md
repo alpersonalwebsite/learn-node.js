@@ -4,6 +4,16 @@
 TODO: explain each one
 -->
 
+---
+
+* [Authentication](#authentication)
+  + [Sample route for creating a USER](#sample-route-for-creating-a-user)
+  + [Sample route for authenticating a USER](#sample-route-for-authenticating-a-user)
+  + [Sample way to protect a route with a middleware function](#sample-way-to-protect-a-route-with-a-middleware-function)
+* [Authorization](#authorization)
+
+---
+
 Authentication -> WHO?
 Authorization -> WHAT?
 
