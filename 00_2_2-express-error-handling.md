@@ -1,6 +1,14 @@
 # Error Handling
 More info: https://expressjs.com/en/guide/error-handling.html
 
+---
+
+* [Handle rejected promises by route](#handle-rejected-promises-by-route)
+* [Error handler middleware](#error-handler-middleware)
+* [Use NPM package like ExpressJS Async Errors](#use-npm-package-like-expressjs-async-errors)
+
+---
+
 Every time we are working with `promises` we need to handle the case of failure:
 
 **Example 1: .then(data).catch(err)**
