@@ -1,6 +1,12 @@
 # BCrypt
 A library to hash our passwords.
 
+---
+
+* [Salt, hash and compare](#salt--hash-and-compare)
+
+---
+
 Install bcrypt: `npm install bcrypt`
 
 <!-- 
