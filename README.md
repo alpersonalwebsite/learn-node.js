@@ -48,3 +48,6 @@
   * [Handle rejected promises by route](00_2_2-express-error-handling.md#handle-rejected-promises-by-route)
   * [Error handler middleware](00_2_2-express-error-handling.md#error-handler-middleware)
   * [Use NPM package like ExpressJS Async Errors](00_2_2-express-error-handling.md#use-npm-package-like-expressjs-async-errors)
+
+* NPM Dependencies
+  * [Bcrypt](./00_3_1_dependencies-bcrypt.md)
