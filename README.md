@@ -51,3 +51,4 @@
 
 * NPM Dependencies
   * [Bcrypt](./00_3_1_dependencies-bcrypt.md)
+  * [Config](./00_3_1_dependencies-config.md)
