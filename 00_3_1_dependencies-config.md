@@ -1,6 +1,12 @@
 # Config
 (configuring applications)
 
+---
+
+* [Custom Environment Variables](#custom-environment-variables)
+
+---
+
 Install config: `npm install config`
 
 Create a folder to hold the configuration files, example, config.
