@@ -1,6 +1,13 @@
 # Joi
 For validation purposes.
 
+---
+
+* [Joi ObjectId](#joi-objectid)
+* [Joi Password Complexity](#joi-password-complexity)
+
+---
+
 Install Joi: `npm install joi`
 
 In the following example we are validating that the request body includes a `user`. If not, we retrieve an error.
