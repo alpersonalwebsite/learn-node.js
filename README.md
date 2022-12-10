@@ -54,3 +54,4 @@
   * [Config](./00_3_1_dependencies-config.md)
   * [Debug](./00_3_1_dependencies-debug.md)
   * [Express Async Errors](./00_3_1_dependencies-express-async-errors.md)
+  * [Joi](./00_3_1_dependencies-joi.md)
