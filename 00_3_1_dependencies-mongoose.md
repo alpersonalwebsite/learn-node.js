@@ -1,6 +1,38 @@
 ## Mongoose
 Object Data Modeling (ODM) library for MongoDB and Node.js.
 
+---
+
+- [Mongoose](#mongoose)
+- [Connecting to MongoDB](#connecting-to-mongodb)
+- [Initial terminology](#initial-terminology)
+- [Creating a Schema](#creating-a-schema)
+- [SchemaType Options](#schematype-options)
+  * [Some useful SchemaType Options](#some-useful-schematype-options)
+- [Creating a Model](#creating-a-model)
+- [Methods and Statics](#methods-and-statics)
+  * [Instance method example](#instance-method-example)
+  * [Static method example](#static-method-example)
+- [CRUD operations](#crud-operations)
+  * [Creating a document](#creating-a-document)
+  * [Retrieving ALL documents in a collection](#retrieving-all-documents-in-a-collection)
+  * [Retrieving some documents](#retrieving-some-documents)
+    + [Some useful methods](#some-useful-methods)
+  * [Updating a document](#updating-a-document)
+    + [Query and update](#query-and-update)
+    + [Update](#update)
+  * [Deleting documents](#deleting-documents)
+    + [Deleting one document](#deleting-one-document)
+      - [Deleting retrieving the deleted document](#deleting-retrieving-the-deleted-document)
+      - [Deleting without retrieving](#deleting-without-retrieving)
+    + [Deleting several documents](#deleting-several-documents)
+- [MongoDB Query operators](#mongodb-query-operators)
+  * [Comparison Query Operators](#comparison-query-operators)
+  * [Logical Query Operators](#logical-query-operators)
+  * [Regular Expressions](#regular-expressions)
+
+---
+
 Install mongoose: `npm install mongoose`
 
 ## Connecting to MongoDB
